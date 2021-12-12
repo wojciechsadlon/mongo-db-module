@@ -45,7 +45,7 @@ router.post('/employees', async (req, res) => {
   try {
 
     const { firstName, lastName, department } = req.body;
-    const newEmployee = new Employee({ firstName: firstName, lastName: lastName, department: department });
+    const newEmployee = new Employee({ firstName, lastName, department });
     await newEmployee.save();
     res.json({ message: 'OK' });
 

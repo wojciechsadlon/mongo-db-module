@@ -44,7 +44,7 @@ router.post('/products', async (req, res) => {
   try {
 
     const { name, client } = req.body;
-    const newProduct = new Product({ name: name, client: client });
+    const newProduct = new Product({ name, client });
     await newProduct.save();
     res.json({ message: 'OK' });
 
